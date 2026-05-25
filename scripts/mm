@@ -1,12 +1,12 @@
 #!/usr/bin/perl
 
-use FindBin;
+use FindBin ();
 # load modules from "lib" subdir relative to this script
 use lib "$FindBin::RealBin/lib";
 
 use Monit::HTTP ':constants';
-use Data::Dumper;
-use Getopt::Std;
+use Data::Dumper qw( Dumper );
+use Getopt::Std qw( getopts );
 use YAML;
 
 # ----------------------------------------------------------------------------
@@ -21,7 +21,7 @@ sub dbg {
 # ----------------------------------------------------------------------------
 # Print usage
 sub usage {
-    use Pod::Usage;
+    use Pod::Usage qw( pod2usage );
     pod2usage(2);
 }
 # ----------------------------------------------------------------------------
